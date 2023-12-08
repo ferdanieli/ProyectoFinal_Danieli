@@ -4,7 +4,7 @@ import datetime
 from blog.models import Carrera
 
 
-class Comentarios(models.Model):
+class Comentario(models.Model):
     carrera = models.ForeignKey(Carrera, on_delete=models.CASCADE)
     usuario = models.ForeignKey(User, on_delete=models.CASCADE)
     comentario = models.CharField(max_length=255)
