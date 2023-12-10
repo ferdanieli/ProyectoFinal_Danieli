@@ -10,13 +10,4 @@
 
 
 <!--    comment-->
-    {% if user.is_authenticated %}
-
-    <form action="" method="post">
-        <input type="text" name="comentario">
-        <input type="hidden" name="carrera" value= "{{ carrera.id }}">
-        <input type="submit" value="Enviar">
-
-    </form>
-    {% endif %}
 {% endblock %}
