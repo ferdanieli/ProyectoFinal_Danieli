@@ -4,7 +4,9 @@
     <img style="height: 60px" src="{{ carrera.imagen.url }}" alt="">
     <h1> {{ carrera.titulo }}</h1>
     <h6>Comisión N° {{ carrera.comision }}</h6>
-    <p>{{ carrera.descripcion }}</p>
+
+    <a href="/blog/editar/{{ carrera.id }}">{{ carrera.descripcion }}</a>
+        <p class="lead mb-0">
 
 
 <!--    comment-->
