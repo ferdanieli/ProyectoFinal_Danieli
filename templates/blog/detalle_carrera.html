@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block cambio %}
+    <img style="height: 60px" src="{{ carrera.imagen.url }}" alt="">
+    <h1> {{ carrera.titulo }}</h1>
+    <h6>Comisión N° {{ carrera.comision }}</h6>
+    <p>{{ carrera.descripcion }}</p>
+
+
+<!--    comment-->
+    {% if user.is_authenticated %}
+
+    <form action="" method="post">
+        <input type="text" name="comentario">
+        <input type="hidden" name="carrera" value= "{{ carrera.id }}">
+        <input type="submit" value="Enviar">
+
+    </form>
+    {% endif %}
+{% endblock %}

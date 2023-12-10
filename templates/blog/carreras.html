@@ -2,4 +2,12 @@
 
 {% block cambio %}
 
+    {% for carrera in object_list %}
+
+        <a href="/blog/carrera/{{ carrera.id }}">{{ carrera.titulo }}</a>
+        <p class="lead mb-0">
+        </p>
+        <hr>
+    {% endfor %}
+
 {% endblock %}
