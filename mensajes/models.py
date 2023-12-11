@@ -9,3 +9,4 @@ class Comentario(models.Model):
     usuario = models.ForeignKey(User, on_delete=models.CASCADE)
     comentario = models.CharField(max_length=255)
     fecha_creacion = models.DateTimeField(default=datetime.datetime.now())
+

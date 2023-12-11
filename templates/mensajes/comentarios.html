@@ -26,13 +26,18 @@
 
 </head>
 <body>
-    {% if user.is_authenticated %}
 
         <form action="" method="post">
-            Si lo deseas, puedes dejarnos un comentario:
+        Si lo deseas, puedes dejarnos un comentario:
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        {% if user.is_authenticated %}
+
                <input type="text" name="comentario">
                <input type="hidden" name="carrera" value= "{{ carrera.id }}">
-               <input type="submit" value="Enviar">
+               <a href="{% url 'CarreraList' %}" class="btn btn-link">Enviar</a>
         </form>
     {% endif %}
 </body>
