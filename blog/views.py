@@ -1,15 +1,16 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render
 from django.views.generic import CreateView, DetailView, ListView, UpdateView, DeleteView
 from blog.models import Carrera
 
 
-class CrearCarrera(CreateView):
+class CrearCarrera(LoginRequiredMixin, CreateView):
     model = Carrera
     success_url = "/blog/carreras/"
     template_name = "blog/crear_carrera.html"
     fields = "__all__"
 
-class CarreraList(ListView):
+class CarreraList(LoginRequiredMixin, ListView):
     model = Carrera
     template_name = "blog/carreras.html"
 
@@ -18,7 +19,7 @@ class DetalleCarrera(DetailView):
     model = Carrera
     template_name = "blog/detalle_carrera.html"
 
-class ActualizacionCarrera(UpdateView):
+class ActualizacionCarrera(LoginRequiredMixin, UpdateView):
     model = Carrera
     success_url = "/blog/carreras/"
     template_name = "blog/crear_carrera.html"
