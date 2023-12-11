@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Comentarios</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Calibri, sans-serif;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        form {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+        }
+    </style>
+
+</head>
+<body>
+    {% if user.is_authenticated %}
+
+        <form action="" method="post">
+            Si lo deseas, puedes dejarnos un comentario:
+               <input type="text" name="comentario">
+               <input type="hidden" name="carrera" value= "{{ carrera.id }}">
+               <input type="submit" value="Enviar">
+        </form>
+    {% endif %}
+</body>
+</html>

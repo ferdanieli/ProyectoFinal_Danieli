@@ -1,4 +1,4 @@
-from django.shortcuts import redirect
+from django.shortcuts import redirect, render
 
 from blog.models import Carrera
 from mensajes.forms import ComentarioForm
@@ -16,3 +16,9 @@ def comentario(request):
         comentario_crear.save()
 
         return redirect("/blog/carreras/")
+
+    form = ComentarioForm()
+    contexto = {
+        "form": form
+    }
+    return render(request, "mensajes/comentarios.html", contexto)
