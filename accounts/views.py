@@ -2,6 +2,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import AuthenticationForm
 from django.shortcuts import render, redirect
 from django.urls import reverse
+from accounts.forms import UserRegisterForm
 
 
 def login_request(request):
@@ -20,7 +21,7 @@ def login_request(request):
                 login(request, user)
 
 
-        return redirect('CarreraList')
+        return redirect('/')
 
     form = AuthenticationForm()
     contexto = {
@@ -32,3 +33,15 @@ def login_request(request):
 def logout_request(request):
     logout(request)
     return redirect(reverse('Login') + '?mensaje=Sesión + cerrada.')
+
+def register_request(request):
+    if request.method == "POST":
+        form = UserRegisterForm(request.POST)
+        if form.is_valid():
+            form.save()
+
+            return redirect('/')
+
+    form = UserRegisterForm()
+    contexto = {"form": form}
+    return render(request, "accounts/registro.html", contexto)
