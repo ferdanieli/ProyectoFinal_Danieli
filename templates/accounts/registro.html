@@ -9,7 +9,6 @@
             margin: 0;
             padding: 0;
             font-family: Calibri, sans-serif;
-
             background-size: cover;
             display: flex;
             align-items: center;
@@ -41,7 +40,8 @@
     <form method="POST">
         {% csrf_token %}
         {{ form.as_p }}
-        <input type="submit" value="Registrarse">
+        <input type="submit"
+               value="{% if '/accounts/update/' in request.path %}Editar{% elif '/accounts/register' in request.path %}Registrarse{% endif %}"></h6>
     </form>
 </body>
 </html>

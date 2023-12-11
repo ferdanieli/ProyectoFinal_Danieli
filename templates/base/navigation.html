@@ -1,9 +1,14 @@
 <nav class="navbar navbar-light bg-light static-top" xmlns="http://www.w3.org/1999/html">
         <div class="container">
 
-            <a class="btn btn-link" href="/blog/carreras/">Carreras</a>
-            <a href="{% url 'Login' %}" class="btn btn-link">Login</a>
-            <a class="btn btn-link" href="{% url 'Logout' %}">Logout</a>
-             <a href="{% url 'Sign Up' %}" class="btn btn-link">Sign Up</a>
+            {% if user.is_authenticated %}
+                <a class="btn btn-link" href="/blog/carreras/">Carreras</a>
+<!--            <h5>{{ user.get_username }}</h5>-->
+                <a class="disabled btn btn-dark">{{ user.get_username }} <img style="height: 60px"  src="{{ user.avatar.imagen.url }}" alt=""></a>
+                <a class="btn btn-link" href="{% url 'Logout' %}">Logout</a>
+                {% else %}
+                <a href="{% url 'Login' %}" class="btn btn-link">Login</a>
+                <a href="{% url 'Sign Up' %}" class="btn btn-link">Sign Up</a>
+            {% endif %}
         </div>
  </nav>

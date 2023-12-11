@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Login</title>
+    <title>Crear Avatar</title>
 
     <style>
         body {
@@ -13,38 +13,22 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            height: 50vh;
-        }
-
-        #mensaje {
-
-            color: #1a1e21;
-            background-color: #e7f1ff;
-            padding: 3px;
-            margin-bottom: 5px;
+            height: 100vh;
         }
 
         form {
-
             background-color: rgba(255, 255, 255, 0.8);
             padding: 20px;
             border-radius: 10px;
             width: 300px;
         }
-
-
     </style>
 </head>
 <body>
-    {% if request.GET.mensaje %}
-    <div id="mensaje">
-        <h1>{{ request.GET.mensaje }}</h1>
-    </div>
-    {% endif %}
-    <form method="POST">
+    <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.as_p }}
-        <input type="submit" value="Iniciar sesión">
+        <input type="submit" value="Crear Avatar">
     </form>
 </body>
 </html>

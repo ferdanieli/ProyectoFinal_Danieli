@@ -10,7 +10,7 @@ class CrearCarrera(LoginRequiredMixin, CreateView):
     template_name = "blog/crear_carrera.html"
     fields = "__all__"
 
-class CarreraList(LoginRequiredMixin, ListView):
+class CarreraList(ListView):
     model = Carrera
     template_name = "blog/carreras.html"
 
