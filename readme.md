@@ -31,7 +31,7 @@ Instalación: los requisitos para acceder son los siguientes:
 Una vez realizada la instalación, puedes clonar el proyecto realizando los siguientes pasos:
 
 1) Abrir GitBash y escirbir: cd y nombre de la carpeta en la que deseas guardar el proyecto y das enter.
-2) Luego escribes el siguiente comando: git clone https://github.com/ferdanieli/TerceraPreEntrega_Danieli.git y das enter.
+2) Luego escribes el siguiente comando: git clone https://github.com/ferdanieli/ProyectoFinal_Danieli.git y das enter.
 3) Ingresar a PyCharm, abrir un proyecto, hacer click derecho en el menú, hacer click en "Open", buscar
 la carpeta en donde elegiste clonar el proyecto, buscar y seleccionar el proyecto clonado y hacer click en "OK".
 4) De esta manera, se abrirá el proyecto de la App en tu computadora. 
